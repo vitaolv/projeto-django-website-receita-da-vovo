@@ -1,0 +1,80 @@
+{% extends 'global/base.html' %}
+{% load static %}
+
+{% block title %} Gerenciamento de receitas | Receita da vovó {% endblock title %}
+
+{% block content %}
+
+<div class="main-dashboard center">
+    
+    <br>
+    {% include 'global/partials/messages.html' %}
+    <div class="title-dashboard">
+        <a href="{% url 'recipes:home' %}" title="Ir para home" alt="Home"> 
+            <img src="{% static 'global/img/toInitial.png' %}" alt="inicial">
+        </a>
+        <h2> Gerenciamento de receitas </h2>
+        <a  href="{% url 'authors:dashboard_recipe_new' %}" title="Criar receita" alt="Criar Receita">
+            <img src="{% static 'global/img/toCreateRecipe.png' %}" alt="Criar-receita">
+        </a>
+    </div>
+
+    <hr>
+
+    <div class='author-dashboard-container'>
+        <div class="list-recipes-dashboard">
+           
+            <table id='recipes-in-table' class='center'>
+                <thead>
+                    <tr>
+                        <th>id</th>
+                        <th>Título</th>
+                        <th>Data de criação</th>
+                        <th>Data de modificação</th>
+                        <th>Ação</th>
+                    <tr>
+                        </thread>
+                <tbody>
+                {% for recipe in recipes %}
+    
+                    <tr>
+                        <td class="cell">{{recipe.id}}</td>
+                        <td class="cell">{{ recipe.title }}</td>
+                        <td class="cell2">{{ recipe.created_at }}</td>
+                        <td class="cell2">{{ recipe.updated_at }}</td>
+                        <td id="cell-action">
+                            <br>
+                            <a href="{% url 'authors:dashboard_recipe_edit' recipe.id %}" title="Editar">
+                                <img src="{% static 'global/img/edit-dashboard.jpg' %}" alt='editar-receita'>
+                            </a>
+                            <form class='form-delete' action="{% url 'authors:dashboard_recipe_delete' %}"
+                                method='POST'>
+                                {% csrf_token %}
+                                <input type="hidden" name="id" alt="Deletar" value="{{ recipe.id }}" title="Apagar">
+                                <button id='cell-action' type="submit">
+                                    <img src="{% static 'global/img/trash-dashboard.jpg' %}" title="Apagar" alt='remover-receita'>
+                                </button>
+                            </form>
+                            <br>
+                        </td>
+                    </tr>
+                    {% empty %}
+                    <script src="{% static 'global/js/empty_tableDeleted.js' %}"></script>
+                    <div class="recipe-not-in-table center">
+                        <br><h3> oops, você não tem receita aqui.</h3>
+                        <br><img src={% static 'global/img/void.png' %} alt='Nenhuma receita'>
+                        <div id="empty-table">
+                            <br><br><p>As receitas criadas por você serão exbidas nesta página.</p>
+                            <br>
+                            <p> Para criar a receita, clique em <img src="{% static 'global/img/toCreateRecipe.png' %}"> no canto superior.</p>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </tbody>
+                {% include 'global/partials/pagination.html' %}
+            </table>
+        
+        </div>
+    </div>
+</div>
+{% endblock content %}

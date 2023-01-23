@@ -1,0 +1,39 @@
+{% load static %}
+<li><img id="user-img" src="{%static 'global/img/user.png'%}" alt="user"></li>
+{% if request.user.is_authenticated %}
+<form class="my-username-header" action="{% url 'authors:logout' %}" method='POST'>
+    <li>
+        <div class="login-is-online my-profile-dashboard">
+            <h4>Olá, <span>{{request.user.username}}</span></h4>
+        </div>
+    </li>
+    <li><a href="#">Sua conta</a></li>
+    <li><a href="{% url 'authors:dashboard_recipe_new' %}">Crie uma receita</a></li>
+    <li><a href="{% url 'authors:dashboard' %}">Ver suas receitas </a></li>
+    {% csrf_token %}
+    <input type="hidden" name="username" value="{{ request.user.username }}">
+    <button class="plaintext-button" type="submit"> Sair </button>
+</form>
+<li>
+    <hr>
+</li>
+{% else %}
+<li>
+    <div class="login-is-offline">
+        <h4>
+            Já tem uma conta?
+            <a href="{% url 'authors:login' %}">
+                <button class="button-toLogin" type="submit"> Acesse sua conta</button>
+            </a>
+            <br>ou<br>
+            Não tem uma conta?
+            <a href="{% url 'authors:register' %}">
+                <button class="button-toRegister" type="submit"> Crie sua conta </button>
+            </a>
+        </h4>
+    </div>
+</li>
+<li>
+    <hr>
+</li>
+{% endif %}

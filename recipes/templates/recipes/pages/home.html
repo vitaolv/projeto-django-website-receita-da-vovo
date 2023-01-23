@@ -1,0 +1,29 @@
+{% extends 'global/base.html' %}
+
+
+<title>{% block title %} Home | {% endblock title%}</title>
+
+{% block content %}
+
+{% include 'global/partials/messages.html' %}
+<div class="main-content main-content-list container">
+    
+    {% for  recipe in recipes  %}
+        {% include 'recipes/partials/card.html' %}
+    
+    {% empty %}
+    <div class="center-no-recipes center m-y">
+        <br><br>
+        <h2 id='alert-NoRecipe'>Sinto muito! Não há receita encontrada.</h2>
+        <br><br>
+        <figure>
+            {%load static%}
+            <img src="{% static 'global/img/noRecipe.png' %}" alt="noRecipe">
+        </figure>
+        <br>
+    </div>
+
+    {% endfor %}
+</div>
+
+{% endblock content %}

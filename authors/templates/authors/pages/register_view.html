@@ -1,0 +1,18 @@
+{% extends 'global/base.html' %}
+
+{%block title %} Register | {% endblock title %}
+
+{%block content %}
+    <section class='center main-register'>
+        <h1> Crie sua conta </h1><br><hr>
+
+        {% include 'global/partials/messages.html' %}
+        {% include 'global/partials/form.html' %}
+        
+        <hr><br>
+        <p>Já tem uma conta?</p>
+        <a href="{% url 'authors:login' %}">
+            <button id="button-toLogin" type="submit"> Acesse aqui</button>
+        </a>
+    </section>
+{% endblock content%}

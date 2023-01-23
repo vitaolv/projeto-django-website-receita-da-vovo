@@ -1,0 +1,61 @@
+.container {
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 10px;
+    position: relative;
+    
+}
+
+.main-header-container {
+    background: var(--color-secondary);
+    position: fixed;
+    width: 100%;
+    z-index: 3;
+}
+
+.logo-content {
+    text-align: center;
+}
+
+.main-logo img{
+    width: 9.5rem;
+}
+
+@media (max-width: 1000px) {
+    .main-logo {
+        font-size: 2rem;
+        letter-spacing: 3px;
+    }
+    .main-header h4{
+        font-size: 1.33rem;
+        margin-left: 10px;
+        text-align: center;
+    }
+}
+
+#user-img {
+    width: 55px;
+}
+
+.my-profile-dashboard {
+    color: var(--color-primary);
+}
+
+.menu-navbar{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(1fr, 1fr));
+}
+.group-company {
+padding-bottom: 105px;
+}
+
+.group-company img{
+    width: 50px;
+}
+
+.main-header {
+    display: block;
+    flex-direction: row;
+    align-items: center;
+    justify-content:baseline;
+}

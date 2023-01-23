@@ -1,0 +1,30 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+
+<head>
+    {% include 'global/partials/head.html' %}
+    <title>{% block title %}{% endblock title%} Receita da vovó </title>
+    <link rel="icon" type="imagem/png" href="{%static 'global/img/logo.png'%}"
+</head>
+    
+<body>
+    {% include 'global/partials/header.html' %}
+    <br><br><br><br><br><br><br><br>
+    {% include 'global/partials/search.html' %}
+
+    <br><br>
+
+    <main class='main-content-container'>
+        {% block content %}{% endblock content %}
+        {% include 'global/partials/pagination.html' %}
+    </main>
+    <footer>
+        {% include 'global/partials/footer.html'%}
+    </footer>
+    <script src="{% static 'global/js/alert_recipe_delete.js' %}"></script>
+    <a class="back-to-top" href="#">➤</a>
+</body>
+
+</html>

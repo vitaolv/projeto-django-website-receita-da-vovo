@@ -1,0 +1,132 @@
+.main-dashboard {
+    text-align: center;
+    justify-content: center;
+    background-color: var(--background-color-forms);
+    margin: 0 auto;
+    margin-bottom: 3rem;
+    max-width: 120rem;
+    border-radius: 3rem;
+    border-collapse: collapse; 
+    padding-bottom: 3rem;
+}
+
+.title-dashboard {
+    text-align: center;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 3rem;
+    padding-top: 3rem;
+}
+
+.title-dashboard a img {
+    width: 24px;
+    border: solid 3px var(--color-secondary);
+    border-radius: 50%;
+    padding: 0.8rem;
+}
+
+.title-dashboard a img:hover {
+    background: rgba(0, 0, 0, 0.301);
+    transition: all 0.2s ease-in-out;
+}
+
+
+.list-recipes-dashboard  {
+    width: 95%;
+    display: inline-block;
+    text-align: justify;
+    list-style-type: none;
+}
+
+
+.list-recipes-dashboard table  { 
+    width: 100%;
+    margin-top:  20px; 
+    display:block;
+    overflow-x: scroll;
+    max-width: 100%; 
+    border-style: solid;
+    border-width: 4px;
+    border-color: var(--color-secondary);
+    border-collapse: collapse;
+    border-radius: 1rem;
+
+    outline: none;
+    position: relative !important;
+}
+
+.list-recipes-dashboard th  { 
+    padding: 1px 68px;
+    height: 4rem;
+    font-size: 1.7rem;
+}
+
+@media (max-width:800) {
+    .list-recipes-dashboard th  { 
+        padding: 1px 40px;
+        font-size: 1.3rem;
+    }
+}
+
+.list-recipes-dashboard  thead tr {
+    background-color:  var(--color-secondary);
+    color: #ffffff;
+}
+
+.list-recipes-dashboard tr:nth-child(even) { 
+    background: #ffac5ec5;
+}
+
+.list-recipes-dashboard td {
+    font-size: 1.3rem;
+    outline: None;
+}
+
+.cell {
+    padding: 1px 60px;
+}
+
+.cell2{
+    padding: 1px 90px;
+}
+
+.cell2 td {
+    padding: 1px 90px;
+}
+
+#cell-action {
+    margin-top: 5px;
+    padding: 1px 30px;
+}
+
+#cell-action img {
+    width: 35px;
+    border-color: var(--color-secondary);
+    border-style:ridge solid;
+    border-width: 3px;
+    border-radius: 50%;
+}
+
+#cell-action img:hover {
+    filter:brightness(60%);
+    transition: all 0.2s ease-in-out;
+}
+
+#cell-action button {
+    background: None;
+    padding: 0;
+    border: none;
+    border-radius: 1rem;
+}
+
+.recipe-not-in-table img{
+    width: 20rem;
+}
+
+#empty-table img {
+    margin-left: 8px;
+    margin-right: 8px;
+    width: 2rem;
+
+}

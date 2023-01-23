@@ -1,0 +1,24 @@
+<header class="main-header-container">
+    <div class="main-header container">
+
+        <nav id="left-nav-menu">
+            <div class="icon-menu">
+                    <input id="close-menu" class="close-menu" type="checkbox" aria-label="Close menu" onclick="menuShow()">
+                    <label class="close-menu-label" for="close-menu" title="close menu"></label>
+            </div>
+            <ul>
+                {% include 'global/partials/login_form_navbar.html' %}
+                {% include 'global/partials/menu_navbar.html' %}
+            </ul>
+        </nav>
+        {% load static %}
+        <script src="{% static 'global/js/nav_menu.js' %}"></script>
+
+        <div class="logo-content">
+            {% load static %}
+            <a class="main-logo" href="{% url 'recipes:home' %}">
+                <img src="{%static 'global/img/logo.png'%}" alt="logo">
+            </a>
+        </div>
+    </div>
+</header>

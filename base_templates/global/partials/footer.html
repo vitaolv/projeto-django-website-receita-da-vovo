@@ -1,0 +1,22 @@
+<footer class="main-footer">
+
+  <div class="text-footer">
+    <div class="developer">
+      <a target="_blank" rel="noreferrer noopener">Developed by Victor.</a>
+    </div>
+  
+    <div class="powered">
+      <a href="https://www.djangoproject.com/" target="_blank" rel="noreferrer noopener">Powered by Django</a>
+    </div>
+  </div>  
+
+    <div class="icon-footer">
+      {% load static %}
+        <div class="main-logo">
+          <a href="{% url 'recipes:home' %}">
+              <img src="{%static 'global/img/logo.png'%}" alt="logo">
+          </a>
+        </div>
+    </div>
+
+  </footer>

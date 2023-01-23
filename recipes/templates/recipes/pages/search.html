@@ -1,0 +1,28 @@
+{% extends 'global/base.html' %}
+
+
+<title>{% block title %} {{page_title}} | {% endblock title%}</title>
+{% block content %}
+
+<br><div class="center">
+        <h2>Pesquisou por: {{search_term}}</h2>
+        <br><br>
+</div>
+
+<div class="main-content main-content-list container">
+    {% for  recipe in recipes  %}
+        {% include 'recipes/partials/card.html' %}
+    {% empty %}
+        <div class="center-no-recipes center m-y">
+            <div class="alert-no-recipe">
+                <h2 id='alert-NoRecipe'>Sinto muito! Não há receita encontrada.</h2>
+            </div>
+            <br><br>
+            <figure>
+                {%load static%}
+                <img src="{% static 'global/img/noRecipe.png' %}" alt="noRecipe">
+            </figure>
+        </div>
+    {% endfor %}
+</div>
+{% endblock content %}

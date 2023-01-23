@@ -1,0 +1,26 @@
+{% extends 'global/base.html' %}
+{%load static %}
+{% block content %}
+<div class="dashboard-recipe-edit center">
+    {% include 'global/partials/messages.html' %}
+
+    <div class="dashboard-form-recipe-edit span-2 center">
+
+        <div class="title-dashboard">
+            <a href="{% url 'authors:dashboard' %}" title="Voltar" alt="Voltar"> 
+                <img src="{% static 'global/img/seta.png' %}" alt="Voltar" >
+            </a>
+            <h2> Crie sua receita </h2>
+            <a  href="{% url 'authors:dashboard_recipe_new' %}" title="Criar receita" alt="Criar Receita">
+                <img src="{% static 'global/img/toCreateRecipe.png' %}" alt="Criar-receita">
+            </a>
+        </div>
+        <hr>
+        
+        {% include 'global/partials/form.html' %}
+    </div>
+
+</div>
+
+{% endblock content %}
+

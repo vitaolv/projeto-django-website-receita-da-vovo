@@ -1,0 +1,85 @@
+.dashboard-recipe-edit {
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}   
+
+.dashboard-recipe-edit {
+  display: flex;
+  flex-direction: column;
+}   
+
+.dashboard-form-recipe-edit {
+  background: var(--background-color-forms);
+  width: 75rem;
+  border-radius: 3rem;
+}
+
+@media (max-width: 800px ) {
+  .dashboard-form-recipe-edit {
+    width: 100%;
+  }
+  .dashboard-recipe-edit, .form-content, .dashboard-form-recipe-edit {
+    grid-template-rows: repeat(auto-fit, minmax(100%, 1fr));
+  }
+}
+
+.dashboard-recipe-edit input,
+.dashboard-recipe-edit  textarea,
+.dashboard-recipe-edit select {
+  width: 80%;
+  border-radius: 0.5rem;
+  border: 1px solid var(--color-secondary);
+  width: 100%;
+  padding: 0.4rem 0.75rem;
+}
+
+.dashboard-recipe-edit select {
+  width: 20rem;
+  border-radius: 0.5rem;
+  box-sizing: border-box;
+  font-size: 1.5rem;
+}
+
+#id_preparation_time, #id_servings, #id_cover {
+  border-radius: 0.2rem;
+  font-size: 1.5rem;
+  width: 18rem;
+}
+
+.dashboard-recipe-edit input#id_title {
+  height: 3rem;
+  font-size: 1.5rem;
+  width: 30rem;
+  border-radius: 0.5rem;
+  box-sizing: border-box
+}
+
+.dashboard-recipe-edit textarea#id_preparation_steps {
+    resize: none;
+    height: 40rem;
+    width: 95%;
+    border-radius: 0.5rem;
+    box-sizing: border-box;
+    font-size: 1.5rem;
+}
+
+.dashboard-recipe-edit textarea#id_description {
+  resize: none;
+  height: 5.4rem;
+  width: 90%;
+  overflow-y: scroll;
+  border-radius: 0.5rem;
+  box-sizing: border-box;
+  font-size: 1.3rem;
+}
+
+#id_cover {
+  width: 80%;
+}
+
+.dashboard-form-recipe-edit img {
+  width: 30rem;
+  border: dotted 3.5px var(--color-secondary);
+  border-radius: 0.5rem;
+}

@@ -1,0 +1,74 @@
+.main-login {
+    text-align: center;
+    justify-content: center;
+    margin: 0 auto;
+    padding: 1.4rem;
+    margin-bottom: 3rem;
+    max-width: 45rem;
+    background-color: #ffffffc5;
+    border-radius: 3rem;
+    letter-spacing: 1.3px;
+  }
+
+#user-img-login  {
+    color: var(--color-secondary);
+    border-radius: 50%;
+    border-style: solid;
+    filter: contrast(180%);
+    width: 10rem;
+    margin-top: 2rem;
+}
+
+.content-login button{
+    background-color: #ffffff00;
+    color:var(--color-primary);
+    font-size: 1rem; 
+    letter-spacing: 1.5px;
+    font-weight: bold;
+    outline: 1px solid var(--color-primary);
+    border-radius: none;
+
+    border-style: none;
+    position: relative;
+    overflow: hidden;
+    text-transform: uppercase;
+    display: inline-block;
+    transition: color 1s;
+    transition: border-radius 1s;
+    padding: 6px 15px;
+    transform: scale(1);
+}
+
+.content-login button{
+    border-radius: 2rem; 
+    color: var(--color-primary);
+}
+
+.content-login button::before {
+    content:'';
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: -1;
+    width: 200%;
+    height: 100%;
+    background-color: var(--color-secondary);
+    transform: scaleX(0) skewX(30deg);
+    transform-origin: bottom;
+    transition: transform 1.2s;  
+}
+
+.content-login button:hover::before {
+    transform: scaleX(2) skewX(50deg);
+
+}
+
+.content-login button:focus::before{
+    background-color: var(--color-primary);
+    color: var(--color-secondary);
+}
+
+.content-login button:focus{
+    background-color: var(--color-primary);
+    color: var(--color-secondary);
+}

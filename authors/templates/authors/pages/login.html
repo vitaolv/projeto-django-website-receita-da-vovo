@@ -1,0 +1,26 @@
+{% extends 'global/base.html' %}
+
+{% block title %} Login | {% endblock %}
+
+{% block content %}
+
+<div class="center main-login">
+    <h1> Login </h1><br>
+    <hr>
+    {%load static%}
+    <img id="user-img-login" src="{%static 'global/img/user.png'%}" alt="user">
+    {% include 'global/partials/messages.html' %}
+    
+    {% if not user.is_authenticated %}
+    {% include 'global/partials/form.html' %}
+    {% else %}
+    {% url 'recipes:home' %}
+    {% endif %}
+    <hr><br> 
+    <p>Não tem uma conta?</p>
+    <a href="{% url 'authors:register' %}">
+        <button class="button-toRegister" type="submit"> Crie sua conta </button>
+    </a>
+</div>
+
+{% endblock content %}

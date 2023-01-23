@@ -1,0 +1,112 @@
+.about-content {
+    margin-top: 5rem;
+    margin-bottom: 5rem;
+    text-align: center;
+    padding: 4rem;
+}
+
+.company-name {
+    font-weight: bold;
+}
+
+.text-about {
+    padding-top: 2rem;
+    font-size: 18px;
+    line-height: 3rem;
+}
+
+.missoin-values-vision-content {
+    display: flex;
+    margin-top: 5rem;
+    align-items: center;
+    text-align: center;
+    gap: 2.4rem;
+    background: var(--color-white);
+}
+
+@media (max-width: 1118px) {
+    .missoin-values-vision-content{
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+}
+
+.image-recipe {
+    width: 90rem;
+    float: left;
+    height: 32rem;
+}
+
+.mission, .vision, .values {
+    line-height: 2.9rem;
+    padding: 3rem;
+    font-size: 17px;
+}
+
+@media (max-width: 1118px) {
+    .contact-content{
+      size-adjust: 20cm;
+    }
+    .image-recipe {
+        width: 50rem;
+        height: 50rem;
+    }
+}
+
+@media (max-width: 500px) {
+    .contact-content{
+      size-adjust: 5rem;
+    }
+    .image-recipe {
+        width: 100%;
+        height: 33.4rem;
+    }
+}
+
+.contact-content {
+    color: rgb(0, 0, 0);
+    text-align: center;
+    padding: 2rem;
+    padding-bottom: 2rem;
+    background: rgba(0, 0, 0, 0.326);
+
+}
+
+.contact-information {
+    padding-top: 1.5rem;
+    display: inline-flex;
+    gap: 3rem;
+    font-size: 1.7rem;
+}
+
+.contact-information i {
+    font-size: 4rem;
+    margin-bottom: 1.5rem;
+
+}
+
+.contact-via-email, .contact-via-phone, .contact-via-address {
+    text-align: center;
+    padding: 4rem;
+}
+
+.company-contact-form {
+    font-weight: bolder;
+}
+
+
+@media (max-width: 1118px) {
+    .contact-content {
+        padding: 1rem;
+    }
+    
+    .contact-information{
+      display: block;
+      font-size: 1.6rem;
+    }
+
+    .contact-via-email, .contact-via-phone, .contact-via-address {
+        text-align: center;
+        padding: 1.5rem;
+    }
+}

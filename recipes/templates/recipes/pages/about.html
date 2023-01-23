@@ -1,0 +1,87 @@
+{% extends 'global/base.html'%}
+
+<title>{% block title %} Sobre nós | {% endblock title %}</title>
+
+{% if in_about is True %}
+{% block content %}
+
+<div class="about-content">
+    <h1>Sobre nós</h1>
+    <div class="text-about">
+        <p>
+            Seja bem-vindo! <span class=company-name>A Receita da vovó</span> é um site colaborativo que permite
+            compartilhar
+            a sua receita aqui e ajuda milhões de pessoas, apaixonados por cozinhar, usuários e visitantes do site. Sua
+            proposta é levar até o leitor, de forma descomplicada, dicas de como cozinhar, receitas compartilhadas, ter
+            ideia de fazer a comida e reúne as pessoas apaixonadas por comida com muito carinho.
+            Incluindo quem não entende nada de cozinha, bastando seguir os passos em texto e/ou video.
+        </p>
+        <br>
+        <p>
+            Isto é, uma receita culinária feita por usuário e é compartilhada aos leitores, como uma guia com
+            simplicidade e fácil de comprender a cozinhar.
+            Os diversos usuários dão dicas, tirar dúvidas e responder suas dúvidas, você pode encontrar tudo por aqui.
+        </p>
+    </div>
+</div>
+
+
+<div class="missoin-values-vision-content">
+
+    <div class="mission">
+        <h1> Missão </h1>
+        <p>
+            É comum se você não decidiu qual a comida para um momento especial,
+            <span class=company-name>a receita da vovó</span> oferece uma receita, ajuda, ideia e aperfeiçoar
+            com muito
+            amor e carinho.
+        </p>
+    </div>
+
+    <div class="vision">
+        <h1>Visão</h1>
+        <p>
+            Conectar com a cozinha através de uma receita
+            e conectar com alimentos através das mesas com prazer e ser feliz no momento especial.
+        </p>
+    </div>
+
+    <div class="values">
+        <h1>Valor</h1>
+        <p>
+            De compartilhar receitas até compartilhar ideias,
+            encontrar soluções para suas dúvidas, aprendermos e aperfeiçoarmos. Respeitar os colaboradores, visitantes,
+            usuários e os demais.
+        </p>
+    </div>
+    <img class="image-recipe" src="../../media/img/cook.jpeg" alt="recipe">
+</div>
+
+
+<div class="contact-content">
+    <h1> Contate-nos </h1>
+
+    <div class="contact-information">
+        <div class="contact-via-email">
+            <i class="fas fa-envelope"></i>
+            <p><span class="company-contact-form">E-mail:</span></p>
+            <p>receitadavovo@receitadavovo.com</p>
+        </div>
+
+        <div class="contact-via-phone">
+            <i class="fas fa-phone"></i>
+            <p><span class="company-contact-form">Telefone:</span></p>
+            <p> 1234-1234</p>
+        </div>
+
+        <div class="contact-via-address">
+            <i class="fas fa-map-marker-alt"></i>
+            <p><span class="company-contact-form">Endereço:</span></p>
+            <p> Rua Leopoldo Couto de Magalhães Jr, São Paulo-SP, Brasil.
+            </p>
+        </div>
+    </div>
+</div>
+
+{% endblock content%}
+{% endif %}

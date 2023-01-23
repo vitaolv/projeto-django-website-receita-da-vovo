@@ -1,0 +1,50 @@
+<form class="main-form" action="{{ form_action }}" method="POST" enctype="multipart/form-data" >
+    {% csrf_token %}
+
+    <div class="form-content form-content-grid">
+        {% for field in form %}
+            <div class="form-group {{ field.field.widget.attrs.class }}">
+                <label for="{{ field.id_for_label }}">
+                    {{ field.label }}
+                </label>
+                <div class="form-names">
+                    {{field}}
+                </div>
+            
+                {% if field.help_text %}
+                    <details class="help-text">
+                        <summary> Precisa de dica? </summary>
+                        <br>
+                        <div class="message-help-me">    
+                            <p>{{ field.help_text}}</p>
+                        </div>
+                        </details>
+                    
+                {% endif %}
+                
+                {{field.errors}}
+            </div>
+
+            {% if field.name == 'cover' and field.value.url  %}
+                <div class="span-2">
+                    <img src="{{ field.value.url }}" alt='Capa para {{ recipe.title }}'>
+                </div>
+            
+            {% endif %}
+        {% endfor %}
+    </div><br>
+
+    {% if form.errors %}
+    <div class="form-content form-content-grid">
+        <div class="form-group">
+            <div class="message message-error">
+                Há erros no formulário, por favor, corrija-os e envie novamente.
+            </div>
+        </div>
+    </div>
+    {% endif %}
+
+    <div class="form-group">
+        <button type="submit">CONFIRMAR</button>
+    </div>
+</form>
