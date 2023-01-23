@@ -1,27 +1,28 @@
 .pagination-content {
     position: relative;
-	left: 50%;
-	top: 50%;
-	transform: translate(-50%,-50%);
-	margin: 0;
-	padding: 2rem;
-	background-color: #ffffffc5;
-	border-radius: 40px;
-	box-shadow: 0 5px 25px 0 rgba(0,0,0,.5);
+	  left: 50%;
+	  top: 50%;
+	  transform: translate(-50%,-50%);
+	  margin: 0;
+	  padding: 1.7rem;
+	  background-color: var(--background-color-forms);
+	  border-radius: 40px;
+	  box-shadow: 0 5px 25px 0 rgba(0,0,0,.5);
     display: inline-block;
     list-style: none;
   }
 
   .pagination .page-link {
-    width: 50px;
-    height: 35px;
+    width: 40px;
+    height: 38px;
     line-height: 40px;
-    background: #fff;
+    background: none;
     text-align: center;
     text-decoration: none;
     font: bolder;
+    font-size: 1.4rem;
     color: var(--color-secondary);
-    border-radius: 4px;
+    border-radius: 50%;
     margin: 5px;
     box-shadow: inset 0 5px 10px rgba(0,0,0,.1), 0 2px 5px rgba(0,0,0,.5);
     transition: all .3s ease;
@@ -30,27 +31,27 @@
   }
 
   .page-link {
-    border-color: rgba(0, 0, 0, 0.479);
-    border-style: double;
-
+    border: solid 1.5px var(--color-secondary);
   }
 
   @media (max-width: 450px) {
     .pagination-content {
         display: flex;
+        justify-content: center;
 }
   }
 
   .page-link:hover{
-    background-color: var(--color-hover-pagination);
+    background-color: var(--color-beige);
     margin-inline: +10px;
   }
-
+  
   .page-link:active{
-    background-color: var(--color--a-pagination);
+    background-color: var(--color-primary);
   }
 
  .pagination .page-current{
-    background: var(--color-primary);
+    background: var(--color-secondary);
+    color: var(--color-primary);
     font-weight: bold;
   }

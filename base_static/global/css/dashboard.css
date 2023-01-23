@@ -3,11 +3,11 @@
     justify-content: center;
     background-color: var(--background-color-forms);
     margin: 0 auto;
-    margin-bottom: 3rem;
+    margin-bottom: 5rem;
     max-width: 120rem;
     border-radius: 3rem;
     border-collapse: collapse; 
-    padding-bottom: 3rem;
+
 }
 
 .title-dashboard {

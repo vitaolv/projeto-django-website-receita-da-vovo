@@ -89,8 +89,7 @@
     display: flex;
     flex-flow: row wrap;
     background: var(--color-beige);
-    border-style: dotted;
-    border-color: var(--color-secondary);
+    border: solid 2px var(--color-secondary);
     color: var(--color-secondary);
 }
 

@@ -5,20 +5,16 @@
 }
 
 .main-content-list {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+    display:flex;
+    flex-wrap: wrap;
     gap: 5rem;
+    justify-content: center;
+    margin: 30px 30px 30px 30px
 }
 
-@media (min-width: 200px) and (max-width: 800px) {
-    .main-content-list {
-        grid-template-columns: repeat(1, minmax(200px, 1fr));
-        
-    }
-
-    .recipe-content {
-        font-size: 1px;
-    }
+.recipe-list-item {
+    flex: 1 1 150px;
+    margin: 5px;
 }
 
 .main-content-detail  .recipe-list-item {

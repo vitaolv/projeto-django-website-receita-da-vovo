@@ -14,7 +14,7 @@
     color: var(--color-secondary);
     border-radius: 50%;
     border-style: solid;
-    filter: contrast(180%);
+    filter:grayscale(50%) brightness(48%);
     width: 10rem;
     margin-top: 2rem;
 }

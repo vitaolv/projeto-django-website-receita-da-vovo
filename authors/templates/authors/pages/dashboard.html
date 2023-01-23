@@ -24,7 +24,7 @@
     <div class='author-dashboard-container'>
         <div class="list-recipes-dashboard">
            
-            <table id='recipes-in-table' class='center'>
+            <table id='recipes-in-table' class='center sortable'>
                 <thead>
                     <tr>
                         <th>id</th>
@@ -71,9 +71,8 @@
                     </div>
                     {% endfor %}
                 </tbody>
-                {% include 'global/partials/pagination.html' %}
             </table>
-        
+            {% include 'global/partials/pagination.html' %}
         </div>
     </div>
 </div>
