@@ -1,3 +1,7 @@
+.pagination {
+  align-items: center;
+}
+
 .pagination-content {
     position: relative;
 	  left: 50%;

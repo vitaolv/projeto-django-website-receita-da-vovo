@@ -44,11 +44,11 @@ class RecipeHomePageFunctionalTest(RecipeBaseFunctionalTest):
         self.make_recipe_in_batch()
 
         self.browser.get(self.live_server_url)
-
+        self.sleep(5)
         goToPage2 = self.browser.find_element(
             By.XPATH, '//a[@aria-label="Ir para página 2"]')
-
-        goToPage2.click()
+        self.sleep(5)
+        self.browser.execute_script("arguments[0].click();", goToPage2)
 
         self.sleep(5)
         self.assertEqual(
