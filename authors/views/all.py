@@ -7,11 +7,10 @@ from django.http import Http404
 from django.shortcuts import redirect, render
 from django.urls import reverse
 
+from authors.forms import LoginForm, RegisterForm
 from authors.forms.recipe_form import AuthorRecipeForm
 from recipes.models import Recipe
 from utils.pagination import make_pagination
-
-from .forms import LoginForm, RegisterForm
 
 PER_PAGE = int(os.environ.get('PER_PAGE', 6))
 
@@ -132,7 +131,6 @@ def dashboard(request):
                   context={'recipes': page_obg,
                            'pagination_range': pagination_range,
                            }
-
                   )
 
 
