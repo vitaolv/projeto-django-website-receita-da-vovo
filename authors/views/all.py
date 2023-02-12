@@ -11,7 +11,7 @@ from authors.forms import LoginForm, RegisterForm
 from recipes.models import Recipe
 from utils.pagination import make_pagination
 
-PER_PAGE = int(os.environ.get('PER_PAGE', 6))
+PER_PAGE = int(os.environ.get('PER_PAGE', 2))
 
 
 def register_view(request):
@@ -131,27 +131,3 @@ def dashboard(request):
                            'pagination_range': pagination_range,
                            }
                   )
-
-
-@login_required(login_url='authors:login', redirect_field_name='next')
-def dashboard_recipe_delete(request):
-
-    if not request.POST:
-        raise Http404()
-
-    POST = request.POST
-    id = POST.get('id')
-
-    recipe = Recipe.objects.filter(
-        is_published=False,
-        author=request.user,
-        pk=id,
-    ).first()
-
-    if not recipe:
-        raise Http404()
-
-    recipe.delete()
-
-    messages.success(request, 'Foi deletada com sucesso!')
-    return redirect(reverse('authors:dashboard'))
