@@ -8,6 +8,7 @@ from django.shortcuts import get_object_or_404, render
 from django.views.generic import DetailView, ListView
 
 from recipes.models import Recipe
+from tag.models import Tag
 from utils.pagination import make_pagination
 
 PER_PAGE = int(os.environ.get('PER_PAGE', 8))
@@ -26,6 +27,7 @@ class RecipeListViewBase(ListView):
         )
 
         query_set = query_set.select_related('author', 'category')
+        query_set = query_set.prefetch_related('tags')
 
         return query_set
 
@@ -155,6 +157,32 @@ class RecipeDetailAPI(RecipeDetail):
             recipe_dict,
             safe=False,
         )
+
+
+class RecipeListViewTag(RecipeListViewBase):
+    template_name = 'recipes/pages/tag.html'
+
+    def get_queryset(self, *args, **kwargs):
+        query_set = super().get_queryset(*args, **kwargs)
+        query_set = query_set.filter(
+            tags__slug=self.kwargs.get('slug', ''),
+        )
+        return query_set
+
+    def get_context_data(self, *args, **kwargs):
+        context = super().get_context_data(*args, **kwargs)
+        page_title = Tag.objects.filter(
+            slug=self.kwargs.get('slug', '')
+        ).first()
+
+        if not page_title:
+            page_title = 'Sinto muito! Não há receita encontrada.'
+
+        page_title = f'{page_title} - Tag |'
+        context.update({
+            'page_title': page_title,
+        })
+        return context
 
 
 def recipe(request, id):
