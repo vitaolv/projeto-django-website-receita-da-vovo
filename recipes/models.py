@@ -1,5 +1,8 @@
+from collections import defaultdict
+
 from django.contrib.auth.models import User
 from django.db import models
+from django.forms import ValidationError
 from django.urls import reverse
 from django.utils.text import slugify
 
@@ -32,7 +35,7 @@ class Recipe(models.Model):
                                  null=True, blank=True, default=None)
     author = models.ForeignKey(User, on_delete=models.SET_NULL, null=True)
 
-    tags = models.ManyToManyField(Tag)
+    tags = models.ManyToManyField(Tag, blank=True, default='')
 
     def __str__(self):
         return self.title
@@ -46,3 +49,18 @@ class Recipe(models.Model):
             self.slug = slug
 
         return super().save(*args, **kwargs)
+
+    def clean(self, *args, **kwargs):
+        error_messages = defaultdict(list)
+
+        recipe_from_db = Recipe.objects.filter(
+            title__iexact=self.title).first()
+
+        if recipe_from_db:
+            if recipe_from_db.pk != self.pk:
+                error_messages['title'].append(
+                    'Receitas encontradas com o mesmo título.'
+                )
+
+            if error_messages:
+                raise ValidationError(error_messages)

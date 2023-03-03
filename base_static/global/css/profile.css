@@ -1,0 +1,16 @@
+.profile-content {
+    background: var(--background-color-forms);
+    border-radius: 3rem;
+    padding: 4rem 5rem;
+}
+
+.bio {
+    padding: 3rem;
+}
+
+#profile-img {
+    width: 10rem;
+    border-style:double;
+    border-radius: 50%;
+    border-width: 4px;
+}

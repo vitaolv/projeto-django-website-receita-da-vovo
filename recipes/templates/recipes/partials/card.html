@@ -29,10 +29,14 @@
 
 
     <div class="recipe-usuario-container">
-        
+
         {% if recipe.author is not None %}
-            <span class="recipe-usuario-item">
-                <i class="fas fa-user"></i>
+        <span class="recipe-usuario-item">
+            <i class="fas fa-user"></i>
+
+            {% if recipe.author.profile %}
+            <a href="{% url 'authors:profile' recipe.author.profile.id %}">
+                {% endif %}
 
                 {% if recipe.author.first_name %}
                 {{recipe.author.first_name}} {{recipe.author.last_name}}
@@ -40,7 +44,12 @@
                 {{recipe.author.username}}
                 {% endif %}
 
-            </span>
+
+                {% if recipe.author.profile %}
+            </a>
+            {% endif %}
+
+        </span>
         {%endif%}
 
         <span class="recipe-usuario-item">
@@ -51,14 +60,14 @@
         </span>
 
         {% if recipe.category is not None %}
-            <span class="recipe-usuario-item">
+        <span class="recipe-usuario-item">
 
-                <a href="{% url 'recipes:category' recipe.category.id %}">
+            <a href="{% url 'recipes:category' recipe.category.id %}">
 
-                    <i class="fas fa-layer-group"></i>
-                    <span>
-                        {{recipe.category.name}}
-                    </span>
+                <i class="fas fa-layer-group"></i>
+                <span>
+                    {{ recipe.category.name }}
+                </span>
             </a>
         </span>
         {% endif %}
@@ -69,7 +78,7 @@
             {{recipe.description}}
         </p>
     </div>
-    
+
     <div class="recipe-meta-container">
         <div class="recipe-meta recipe-preparation font-preparation">
             <h1 class="recipe-meta-title">
@@ -100,20 +109,20 @@
     <div class='preparation-steps'>
 
         {% if recipe.preparation_steps_is_html is True %}
-            {{ recipe.preparation_steps|safe }}
+        {{ recipe.preparation_steps|safe }}
         {% else %}
-            {{ recipe.preparation_steps|linebreaksbr }}
+        {{ recipe.preparation_steps|linebreaksbr }}
         {% endif %}
 
         {% if recipe.tags.all %}
         <p>
             Tags:
             {% for tag in recipe.tags.all %}
-                <a href="{% url 'recipes:tag' tag.slug %}">
-                    {{ tag.name }}</a>, 
+            <a href="{% url 'recipes:tag' tag.slug %}">
+                {{ tag.name }}</a>,
             {% endfor %}
         </p>
-    {% endif %}
+        {% endif %}
 
     </div>
     {% endif %}
