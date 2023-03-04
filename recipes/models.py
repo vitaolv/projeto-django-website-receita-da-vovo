@@ -49,18 +49,3 @@ class Recipe(models.Model):
             self.slug = slug
 
         return super().save(*args, **kwargs)
-
-    def clean(self, *args, **kwargs):
-        error_messages = defaultdict(list)
-
-        recipe_from_db = Recipe.objects.filter(
-            title__iexact=self.title).first()
-
-        if recipe_from_db:
-            if recipe_from_db.pk != self.pk:
-                error_messages['title'].append(
-                    'Receitas encontradas com o mesmo título.'
-                )
-
-            if error_messages:
-                raise ValidationError(error_messages)
