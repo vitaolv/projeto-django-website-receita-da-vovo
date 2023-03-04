@@ -4,10 +4,35 @@ README em andamento.
 -
 Alguns prints:
 
+Home - página principal:
+-
 ![image](https://user-images.githubusercontent.com/84293496/222930487-f2dab9e6-a44d-4e8c-bb75-04148d6aef41.png)
+
+Login - para logar:
+-
 ![Captura de tela_20230124_082147](https://user-images.githubusercontent.com/84293496/222930466-8d20501d-6f8e-43d3-92ac-6c31618f2719.png)
+
+Um menu de navegação no lateral esquerdo:
+-
 ![Captura de tela_20230124_082206](https://user-images.githubusercontent.com/84293496/222930468-6864fc25-b4ff-4c35-b6b5-e140002d2175.png)
+
+Dashboard - lista de receita (nenhuma receitas):
+-
 ![Captura de tela_20230123_111446](https://user-images.githubusercontent.com/84293496/222930470-f260a4b7-6c34-4332-a149-de20f45c2ff7.png)
+
+
+Dashboard - lista de receita (várias receitas):
+-
 ![Captura de tela_20230124_092119](https://user-images.githubusercontent.com/84293496/222930472-968b49e5-65d9-4ac9-9e17-53cc6842ea99.png)
+
+Receita com detalhes:
+-
 ![Captura de tela_20230124_092223](https://user-images.githubusercontent.com/84293496/222930473-746f387b-0cef-4075-851d-6b6e154af4c1.png)
+
+Cria uma receita:
+-
 ![Captura de tela_20230124_092335](https://user-images.githubusercontent.com/84293496/222930475-2a0a23ad-7729-4587-8e90-c8b3cc9eaaa6.png)
+
+Perfil de qualquer um usuário:
+-
+![Captura de tela_20230303_201109](https://user-images.githubusercontent.com/84293496/222931661-2ffa86df-7c05-4321-bd4f-85926d458a24.png)
