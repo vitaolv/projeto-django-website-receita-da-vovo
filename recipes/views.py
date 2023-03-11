@@ -5,6 +5,8 @@ from django.forms.models import model_to_dict
 from django.http import JsonResponse
 from django.http.response import Http404
 from django.shortcuts import get_object_or_404, render
+from django.utils import translation
+from django.utils.translation import gettext as _
 from django.views.generic import DetailView, ListView
 
 from recipes.models import Recipe
@@ -39,10 +41,16 @@ class RecipeListViewBase(ListView):
             context_data.get('recipes'),
             PER_PAGE,
         )
-        context_data.update({
-            'recipes': page_obj,
-            'pagination_range': pagination_range,
-        })
+
+        html_language = translation.get_language()
+
+        context_data.update(
+            {
+                'recipes': page_obj,
+                'pagination_range': pagination_range,
+                'html_language': html_language,
+            }
+        )
         return context_data
 
 
@@ -69,10 +77,14 @@ class RecipeListViewCategory(RecipeListViewBase):
     def get_context_data(self, *args, **kwargs):
         context_data = super().get_context_data(*args, **kwargs)
 
-        context_data.update({
-            'title':
-            f'{context_data.get("recipes")[0].category.name} - Categoria | '
-        })
+        category_translation = _('Category')
+
+        context_data.update(
+            {
+                'title': f'{context_data.get("recipes")[0].category.name} - '
+                f'{category_translation} | '
+            }
+        )
         return context_data
 
     def get_queryset(self, *args, **kwargs):
@@ -146,8 +158,8 @@ class RecipeDetailAPI(RecipeDetail):
         recipe_dict['updated_at'] = str(recipe.updated_at)
 
         if recipe_dict.get('cover'):
-            recipe_dict['cover'] = self.request.build_absolute_uri() + \
-                recipe_dict['cover'].url[1:]
+            recipe_dict['cover'] = self.request.build_absolute_uri(
+            ) + recipe_dict['cover'].url[1:]
         else:
             recipe_dict['cover'] = ''
 
