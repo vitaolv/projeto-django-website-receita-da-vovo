@@ -1,4 +1,15 @@
-README em andamento.
+PROJETO - Desenvolvimento Web em Python com Django: Receita da vovó
+-
+Objetivo do projeto:
+-
+O principal objetivo deste projeto é desenvolver um website de receitas culinárias e aprofundar os conhecimentos sobre Django Web Framework e explorar este mesmo framework, HTML e CSS. Este projeto também envolve os testes unitários, de integração e funcionais, Test Driven Development (TDD), o protocolo HTTP e assim por diante.
+
+
+Testes unitários, testes de Integração e testes automatizados 
+-
+Os testes são importantes para a saúde de um projeto quanto o código de produção, pois preservam, flexibilidade, capacidade de manutenção e reutilização do código. Garante que o projeto funcione como esperamos, assim como a segurança no desenvolvimento do projeto evitando falhas, bugs e futuros problemas devido às atualizações.
+Assim sendo, este projeto de website de culinária foi construído e com testes aprovados.
+
 
 ![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54) ![Django](https://img.shields.io/badge/Django-092E20?style=for-the-badge&logo=django&logoColor=white) ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black) ![HTML](https://img.shields.io/badge/HTML-239120?style=for-the-badge&logo=html5&logoColor=white) ![CSS](https://img.shields.io/badge/CSS-239120?&style=for-the-badge&logo=css3&logoColor=white) ![Visual Studio Code](https://img.shields.io/badge/Visual%20Studio%20Code-0078d7.svg?style=for-the-badge&logo=visual-studio-code&logoColor=white)
 -
